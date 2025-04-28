@@ -139,10 +139,10 @@ function renderChat() {
         <div class="message user">
           I love you! ❤️
         </div>
-        <div class="message crush">
-          <div class="crush-avatar">
+        <div class="crush-avatar">
             <img src="${userData.photo}" class="profile-pic" alt="Crush Profile">
           </div>
+        <div class="message crush">
           I love you too! 💖
         </div>
       </div>
