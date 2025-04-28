@@ -1,0 +1,259 @@
+/* General background */
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(to right, white, pink);
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Main container */
+#messenger {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.5s ease-in-out;
+}
+
+/* Question Container */
+.question-container {
+  background: #f0f2f5;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0px 4px 20px rgba(0,0,0,0.1);
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.question-container h2 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+input[type="text"], input[type="file"], .radio-option {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 10px;
+  background: white;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+/* Animated radio options */
+.radio-option {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideIn 0.5s forwards;
+}
+
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Next Button */
+button {
+  background-color: #0084ff;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: #005bb5;
+}
+
+/* Messenger layout */
+.messenger-container {
+  width: 100%;
+  max-width: 400px;  /* Adjusted for phone screen width */
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+/* Header - profile, name, status */
+.messenger-header {
+  background-color: #0084ff;
+  color: white;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: 20px 20px 0 0;
+}
+
+.profile-pic-container {
+  position: relative;
+  width: 40px;
+  height: 40px;
+}
+
+.profile-pic {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.online-dot {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 8px;
+  height: 8px;
+  background-color: #4caf50;
+  border: 2px solid white;
+  border-radius: 50%;
+}
+
+.profile-info {
+  flex-grow: 1;
+}
+
+.profile-info h3 {
+  margin: 0;
+  font-size: 14px;
+}
+
+.profile-info span {
+  font-size: 10px;
+  opacity: 0.8;
+}
+
+.header-icons {
+  display: flex;
+  color: #1865d7;
+  gap: 15px;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  filter: invert(100%);
+  cursor: pointer;
+}
+
+/* Chat content area */
+.chat-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 10px;
+  padding: 15px;
+  background-color: rgb(245, 242, 242);
+  overflow-y: auto;
+  height: calc(100vh - 130px); /* Space for header and input area */
+}
+
+/* Message bubbles */
+.message {
+  max-width: 70%;
+  padding: 10px 15px;
+  border-radius: 20px;
+  margin: 10px;
+  font-size: 14px;
+  line-height: 1.4;
+  display: inline-block;
+  animation: slideInMessage 0.5s ease-out;
+}
+
+.user {
+  background-color: #0084ff;
+  color: white;
+  margin-left: auto;
+  border-bottom-right-radius: 5px;
+  position: relative;
+}
+
+.crush {
+  background-color: #e5e5ea;
+  color: black;
+  margin-right: auto;
+  border-bottom-left-radius: 5px;
+}
+
+.crush-avatar {
+  position: absolute;
+  left: 568px;
+  top: 168px;
+  width: 23px;
+  height: 23px;
+  border-radius: 50%;
+}
+
+/* Sliding animation */
+@keyframes slideInMessage {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Message input area */
+.chat-input {
+  display: flex;
+  align-items: center;
+  background: #84adeb;
+  padding: 10px;
+  border-top: 1px solid #ddd;
+  border-radius: 0 0 20px 20px;
+  position: relative;
+}
+
+.chat-input input {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 20px;
+  background: white;
+  margin-right: 10px;
+}
+
+.input-icons {
+  position: relative;
+  right: 5px;
+  top: -8px;
+  display: flex;
+  gap: 10px;
+}
+
+.small-icon {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+
+/* Bottom text */
+.bottom-text {
+  text-align: center;
+  color: rgb(0, 0, 0);
+  margin-top: 5px;
+  font-size: 12px;
+}
+
+/* Slide transition */
+.slide-up {
+  transform: translateY(-100%);
+}
