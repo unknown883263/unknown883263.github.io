@@ -138,8 +138,12 @@ button:hover {
 }
 
 .header-icons {
+  position: relative;
+  right: 6%;
   display: flex;
   color: #1865d7;
+  height: 25px;
+  width: 25px;
   gap: 15px;
 }
 
@@ -160,7 +164,7 @@ button:hover {
   padding: 15px;
   background-color: rgb(245, 242, 242);
   overflow-y: auto;
-  height: calc(100vh - 130px); /* Space for header and input area */
+  height: calc(100vh - 150px); /* Space for header and input area */
 }
 
 /* Message bubbles */
