@@ -48,12 +48,31 @@ function renderStep() {
       break;
     case 3:
       messenger.innerHTML = `
-        <div class="question-container">
-          <h2>Upload his/her photo</h2>
-          <input type="file" id="photoUpload" accept="image/*">
-          <button onclick="savePhoto()">Next</button>
-        </div>
+      <div class="question-container">
+       <h2>Upload his/her photo</h2>
+       <input type="file" id="photoUpload" accept="image/*">
+       <img id="previewImage" style="display: none; margin: 5px auto 5px auto; width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 2px solid #ccc;" />
+       <button onclick="savePhoto()">Next</button>
+     </div>
       `;
+
+      document.getElementById('photoUpload').addEventListener('change', function(event) {
+        const file = event.target.files[0];
+        const previewImage = document.getElementById('previewImage');
+    
+        if (file && file.type.startsWith('image/')) {
+          const reader = new FileReader();
+          reader.onload = function(e) {
+            previewImage.src = e.target.result;
+            previewImage.style.display = 'block';
+          };
+          reader.readAsDataURL(file);
+        } else {
+          previewImage.style.display = 'none';
+          previewImage.src = '';
+        }
+      });
+
       break;
     case 4:
       messenger.innerHTML = `
