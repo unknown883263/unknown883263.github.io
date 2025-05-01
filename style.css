@@ -79,6 +79,7 @@ button:hover {
   width: 100%;
   max-width: 400px;  /* Adjusted for phone screen width */
   height: 100%;
+  max-height: fit-content;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -221,12 +222,13 @@ button:hover {
 .chat-input {
   display: flex;
   align-items: center;
+  align-content: center;
+  justify-content: center;
   background: #84adeb;
   padding: 10px;
   border-top: 1px solid #ddd;
   border-radius: 0 0 20px 20px;
   position: relative;
-  bottom: 35px;
 }
 
 .chat-input input {
