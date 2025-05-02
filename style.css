@@ -1,260 +1,299 @@
-/* General background */
+/* General styles */
 body {
-  margin: 0;
-  font-family: 'Arial', sans-serif;
-  background: linear-gradient(to right, white, pink);
-  height: 100vh;
-  overflow: hidden;
-}
-
-/* Main container */
-#messenger {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: all 0.5s ease-in-out;
-}
-
-/* Question Container */
-.question-container {
-  background: #f0f2f5;
-  padding: 30px;
-  border-radius: 20px;
-  box-shadow: 0px 4px 20px rgba(0,0,0,0.1);
-  width: 90%;
-  max-width: 400px;
-  text-align: center;
-}
-
-.question-container h2 {
-  margin-bottom: 20px;
-  color: #333;
-}
-
-input[type="text"], input[type="file"], .radio-option {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 15px;
-  border: none;
-  border-radius: 10px;
-  background: white;
-  font-size: 16px;
-  box-sizing: border-box;
-}
-
-/* Animated radio options */
-.radio-option {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: slideIn 0.5s forwards;
-}
-
-@keyframes slideIn {
-  to {
-    opacity: 1;
-    transform: translateY(0);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: url("https://img.freepik.com/free-vector/gradient-abstract-wireframe-background_23-2149009903.jpg");
+    background-position: center center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
   }
-}
-
-/* Next Button */
-button {
-  background-color: #0084ff;
-  color: white;
-  border: none;
-  padding: 12px 25px;
-  border-radius: 20px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-button:hover {
-  background-color: #005bb5;
-}
-
-/* Messenger layout */
-.messenger-container {
-  width: 100%;
-  max-width: 400px;  /* Adjusted for phone screen width */
-  height: 100%;
-  max-height: fit-content;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  background: white;
-  border-radius: 20px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-}
-
-/* Header - profile, name, status */
-.messenger-header {
-  background-color: #0084ff;
-  color: white;
-  padding: 10px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  border-radius: 20px 20px 0 0;
-}
-
-.profile-pic-container {
-  position: relative;
-  width: 40px;
-  height: 40px;
-}
-
-.profile-pic {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  object-fit: cover;
-}
-
-.online-dot {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 8px;
-  height: 8px;
-  background-color: #4caf50;
-  border: 2px solid white;
-  border-radius: 50%;
-}
-
-.profile-info {
-  flex-grow: 1;
-}
-
-.profile-info h3 {
-  margin: 0;
-  font-size: 14px;
-}
-
-.profile-info span {
-  font-size: 10px;
-  opacity: 0.8;
-}
-
-.header-icons {
-  position: relative;
-  right: 22%;
-  top: 0;
-  display: flex;
-  color: #1865d7;
-  height: 25px;
-  width: 25px;
-  gap: 15px;
-}
-
-.icon {
-  width: 24px;
-  height: 24px;
-  filter: invert(100%);
-  cursor: pointer;
-}
-
-/* Chat content area */
-.chat-content {
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  gap: 10px;
-  padding: 15px;
-  background-color: rgb(245, 242, 242);
-  overflow-y: auto;
-  height: calc(100vh - 130px); /* Space for header and input area */
-}
-
-/* Message bubbles */
-.message {
-  max-width: 70%;
-  padding: 10px 15px;
-  border-radius: 20px;
-  margin: 10px;
-  font-size: 14px;
-  line-height: 1.4;
-  display: inline-block;
-  animation: slideInMessage 0.5s ease-out;
-}
-
-.user {
-  background-color: #0084ff;
-  color: white;
-  margin-left: auto;
-  border-bottom-right-radius: 5px;
-  position: relative;
-}
-
-.crush {
-  background-color: #e5e5ea;
-  color: black;
-  margin-right: auto;
-  border-bottom-left-radius: 5px;
-}
-
-.crush-avatar {
-  position: relative;
-  left: -15px;
-  top: 60px;
-  width: 23px;
-  height: 23px;
-  border-radius: 50%;
-  object-fit: cover;
-}
-
-/* Sliding animation */
-@keyframes slideInMessage {
-  from {
-    transform: translateX(100%);
+  
+  #messenger {
+    width: 100%;
+    max-width: 400px;  /* Adjusted for phone screen width */
+    height: 100%;
+    max-height: fit-content;
+    background: darkgray;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    padding: 20px;
+    overflow: hidden;
+    transition: opacity 0.3s ease;
+  }
+  
+  .fade-out {
     opacity: 0;
   }
-  to {
-    transform: translateX(0);
+  
+  .fade-in {
     opacity: 1;
   }
-}
+  
+  .question-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 2px solid #ccc;
+    border: #000;
+    border-radius: 2px;
+  }
+  
+  .question-container h2 {
+    font-size: 14px;
+    text-align: center;
+    margin: 0;
+  }
+  
+  .question-container input[type="text"],
+  .question-container input[type="file"] 
+  .radio-option {
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+  }
+  
+  .question-container input[type="radio"] {
+    margin-right: 5px;
+  }
 
-/* Message input area */
-.chat-input {
-  display: flex;
-  align-items: center;
-  align-content: center;
-  justify-content: center;
-  background: #84adeb;
-  padding: 10px;
-  border-top: 1px solid #ddd;
-  border-radius: 0 0 20px 20px;
-  position: relative;
-}
+  .preview-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+  }
+  
+  #previewImage {
+    display: none;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #0084ff transparent;
+  }
 
-.chat-input input {
-  flex: 1;
-  padding: 10px;
-  border: none;
-  border-radius: 20px;
-  background: white;
-  margin-right: 10px;
-}
+  .button-container {
+    display: flex;
+    justify-content: center; /* Centers the button horizontally */
+    align-items: center; /* Centers the button vertically (if container has height) */
+    width: 100%;
+  }
+  
+  .question-container button {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    border: none;
+    background-color: #0084ff;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+  }
+  
+  .question-container button:hover {
+    background-color: #006fd6;
+  }
 
-.input-icons {
-  position: relative;
-  right: 5px;
-  top: -8px;
-  display: flex;
-  gap: 10px;
-}
+  body.last-slide #messenger {
+    background: none;
+    box-shadow: none;
+  }  
 
-.small-icon {
-  width: 24px;
-  height: 24px;
-  cursor: pointer;
-}
+  .phone-frame {
+    width: 100%;
+    max-width: 390px; /* typical width for ~6.67" phone at ~20:9 ratio */
+    aspect-ratio: 9/20;
+    height: auto;
+    background: #000;
+    border: 12px solid #000;
+    border-radius: 36px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    padding: 10px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+  }
+  
+  /* Messenger styles */  
+  
+  .messenger-container {
+    width: 100%;
+    height: 100%;
+    background: #121212;
+    border-radius: 24px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    padding: 0;
+    position: relative;
+  }
 
-/* Slide transition */
-.slide-up {
-  transform: translateY(-100%);
-}
+  .messenger-header {
+    background-color: #006fd6;
+    color: white;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-radius: 20px 20px 0 0;
+  }
+  
+  .profile-pic-container {
+    position: relative;
+    width: 40px;
+    height: 40px;
+  }
+  
+  .profile-pic {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  .online-dot {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 8px;
+    height: 8px;
+    background-color: #4caf50;
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 50%;
+  }
+  
+  .profile-info {
+    flex-grow: 1;
+  }
+  
+  .profile-info h3 {
+    margin: 0;
+    font-size: 15px;
+  }
+  
+  .profile-info span {
+    font-size: 12px;
+    opacity: 0.8;
+  }
+  
+  .header-icons {
+    position: absolute;
+    right: 5rem;
+    top: 1rem;
+    display: flex;
+    color: #1865d7;
+    height: 25px;
+    width: 25px;
+    gap: 13px;
+    z-index: 10;
+  }
+  
+  .icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    filter: invert(100%);
+    cursor: pointer;
+  }
+  
+  .chat-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px 0;
+    background-color: black;
+    flex-grow: 1;
+    overflow-y: auto;
+    scrollbar-width: none;
+  }
+
+  .chat-content::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Edge */
+  }
+  
+  .chat-row {
+    display: none; /* initially hidden for reveal effect */
+  }
+  
+  .chat-row.user-row {
+    justify-content: flex-end;
+  }
+  
+  .chat-row.crush-row {
+    justify-content: flex-start;
+    align-items: flex-end;
+  }
+  
+  .crush-avatar {
+    margin-right: 5px;
+    margin-left: 3px;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+  }
+  
+  .message {
+    max-width: 70%;
+    padding: 10px;
+    border-radius: 20px;
+    position: relative;
+  }
+  
+  .message.user {
+    background: #0084ff;
+    color: white;
+    border-bottom-right-radius: 0;
+  }
+  
+  .message.crush {
+    background: #e4e6eb;
+    color: black;
+    border-bottom-left-radius: 0;
+  }
+  
+  .chat-input {
+    display: flex;
+    align-items: center;
+    border-top: 1px solid #ddd;
+    padding: 10px;
+    background-color: #006fd6;
+    position: sticky; /* Keeps the input area at the bottom */
+    bottom: 0; /* Ensures it sticks at the bottom */
+    z-index: 1; /* Makes sure input is above content */
+    width: 100%;
+    box-sizing: border-box;
+  
+  }
+  
+  .chat-input input {
+    flex: 1;
+    padding: 8px 12px;
+    border-radius: 20px;
+    border: 1px solid: black;
+    outline: none;
+    margin-right: 1rem;
+    background-color: #ddd;
+    font-size: 0.8rem;
+  }
+
+  .input-icons {
+    display: flex;
+    gap: 0.5rem;
+  }
+  
+  .input-icons img {
+    width: 20px;
+    height: 20px;
+    margin-left: 0.1rem;
+    cursor: pointer;
+  }  
