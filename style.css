@@ -279,21 +279,22 @@ body {
     flex: 1;
     padding: 8px 12px;
     border-radius: 20px;
-    border: 1px solid: black;
+    border: 1px solid black;
     outline: none;
-    margin-right: 1rem;
+    margin-right: 0.5rem;
     background-color: #ddd;
     font-size: 0.8rem;
   }
 
   .input-icons {
     display: flex;
-    gap: 0.5rem;
+    gap: 0.4rem;
   }
   
   .input-icons img {
     width: 20px;
     height: 20px;
     margin-left: 0.1rem;
+    margin-right: 0.1rem;
     cursor: pointer;
   }  
